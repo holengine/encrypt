@@ -7,6 +7,7 @@ puts <<~CHOICE
   Каким способом зашифровать:
   1. MD5
   2. SHA1
+  3. SHA2
 CHOICE
 choice = $stdin.gets.to_i
 
@@ -16,6 +17,8 @@ encrypt_word =
     Digest::MD5.hexdigest(word)
   when 2
     Digest::SHA1.hexdigest(word)
+  when 3
+    Digest::SHA2.hexdigest(word)
   end
 
 puts 'Вот что получилось:'
